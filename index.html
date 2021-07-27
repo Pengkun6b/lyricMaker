@@ -9,8 +9,10 @@
 </head>
 <body>
     <button onclick="duqu('2.txt')">读取</button>
+    <textarea name="" id="jiba" cols="30" rows="10"></textarea>
+    <button onclick="xr()">写入</button>
 </body>
-<script>
+<script  language="javascript">
 function duqu(fn)
 {
 
@@ -21,6 +23,16 @@ function duqu(fn)
             alert(data);
         }
     });
+}
+function xr(){
+    xie("2.txt",$("#jiba").val)
+}
+function xie(fn,text)
+{
+    var fso=new ActiveXObject(Scripting.FileSystemObject);
+    var f=fso.createtextfile(fn,2,true);
+    f.writeLine(txt);
+    f.close(); 
 }
 </script>
 </html>
