@@ -8,17 +8,19 @@
     <script src="jq.js"></script>
 </head>
 <body>
-    
+    <button onclick="duqu('2.txt')">读取</button>
 </body>
 <script>
-$(function(){
+function duqu(fn)
+{
+
     $.ajax({
-        url: '2.txt',
+        url: fn,
         dataType: 'text',
         success: function(data) {
             alert(data);
         }
     });
-});
+}
 </script>
 </html>
